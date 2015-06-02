@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS =(
     # [os.path.join(BASE_DIR, 'itieau/templates/')],
-    '/home/ubuntu/itieau/itieau/templates'
+    '/home/ubuntu/itieau/itieau/templates',
 
 )
 
