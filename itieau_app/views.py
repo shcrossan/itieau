@@ -19,15 +19,27 @@ def home(request):
     # status_code = conn.read()
     #
 
+    import requests
+
+    url = "http://sthilaire.dyndns.info/BDY_Data.htm"
+
+    querystring = {"p0":"101","p1":"100","p2":"7","p3":"8","p4":"45","p5":"48","p6":"9","p7":"10","p8":"94","p9":"41","p10":"46","p11":"49","p12":"25","p13":"160","p14":"63","p15":"66","p16":"28","p17":"42"}
+
+    headers = {'authorization': 'Basic UzUwMDpBRE1JTkk='}
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    url = response.text
 
 
 
-    r = requests.get("http://tiapiriuf.dyndns.info/BDY_Data.htm", auth=('S500', 'ADMINI'), params='p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42')
-    status_code = r.status_code
-    header = r.headers
-    text = r.text.encode('ASCII', 'ignore')
-    str_text = str(text)
-    split_text = str.split(text, 'Bornier local')
-    value = split_text[0][-5:]
-    url = r.url
+
+    # r = requests.get("http://tiapiriuf.dyndns.info/BDY_Data.htm", auth=('S500', 'ADMINI'), params='p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42')
+    # status_code = r.status_code
+    # header = r.headers
+    # text = r.text.encode('ASCII', 'ignore')
+    # str_text = str(text)
+    # split_text = str.split(text, 'Bornier local')
+    # value = split_text[0][-5:]
+    # url = r.url
     return render_to_response('home.html', locals(), context_instance=RequestContext(request))
