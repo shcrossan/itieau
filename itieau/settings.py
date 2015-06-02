@@ -87,10 +87,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/ubuntu/iteau/static/'
+STATIC_ROOT = '/home/ubuntu/itieau/static/'
 
 STATICFILES_DIRS = (
-    '/home/ubuntu/iteau/static/',
+    '/home/ubuntu/itieau/static/',
 )
 
 TEMPLATE_DIRS =(
