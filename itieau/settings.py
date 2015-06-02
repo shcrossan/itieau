@@ -89,9 +89,13 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = '/home/ubuntu/iteau/static/'
 
+STATICFILES_DIRS = (
+    '/home/ubuntu/iteau/static/',
+)
+
 TEMPLATE_DIRS =(
     [os.path.join(BASE_DIR, 'itieau/templates/')],
-    '/home/ubuntu/itieau/templates'
+    '/home/ubuntu/itieau/itieau/templates'
 
 )
 
