@@ -29,7 +29,7 @@ def home(request):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    url = response.text
+    value = response.text
 
 
 
