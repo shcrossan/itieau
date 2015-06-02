@@ -1,3 +1,5 @@
+
+
 __author__ = 'shanecrossan'
 
 # Create your views here.
@@ -5,12 +7,21 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, redirect, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
+import urllib
+import urllib2
 import requests
 from unicodedata import normalize
 
 
 @login_required
 def home(request):
+    # conn = urllib2.Request("http://S500:ADMINI@tiapiriuf.dyndns.info/BDY_Data.htm?p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42")
+    # status_code = conn.read()
+    #
+
+
+
+
     r = requests.get("http://tiapiriuf.dyndns.info/BDY_Data.htm", auth=('S500', 'ADMINI'), params='p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42')
     status_code = r.status_code
     header = r.headers
