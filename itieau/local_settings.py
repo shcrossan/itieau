@@ -13,6 +13,10 @@ DATABASES = {
 
 STATIC_ROOT = '/Users/shanecrossan/Sites/itievolution/itieau/static/'
 
+STATICFILES_DIRS = (
+
+)
+
 TEMPLATE_DIRS =(
     '/Users/shanecrossan/Sites/itievolution/itieau/itieau/templates',
 )
