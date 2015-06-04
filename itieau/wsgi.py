@@ -16,7 +16,7 @@ application = get_wsgi_application()
 
 def django_application(environ, start_response):
 
-    if environ.get("mod_wsgi.input_chunked") == "1":
+    if environ.get("mod_wsgi.input_chunked") == 1:
         stream = environ["wsgi.input"]
         data = stream.read()
         environ["CONTENT_LENGTH"] = str(len(data))
