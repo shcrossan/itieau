@@ -15,16 +15,10 @@ import requests
 
 @login_required
 def home(request):
-    # user = 'S500'
-    # pwd = 'ADMINI'
-    # url = 'http://tiapiriuf.dyndns.info/BDY_Data.htm?p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42'
-    # browser = Browser()
-    # browser.addheaders.append(('Authorization', 'Basic %s' % base64.encodestring('%s:%s' % (user, pwd))))
-    # r = requests.get("http://www.itievolution-staging.com/itieau/itieau.php", headers=headers, allow_redirects=False)
-    # r = requests.get("http://107.170.192.206/test.php")
-    # text = r.text.encode('ASCII', 'ignore')
-    # str_text = str(text)
-    # split_text = str.split(text, 'Bornier local')
-    # value = split_text[0][-5:]
+    r = requests.get("http://107.170.192.206/test.php")
+    text = r.text.encode('ASCII', 'ignore')
+    str_text = str(text)
+    split_text = str.split(text, 'Bornier local')
+    value = split_text[0][-5:]
 
     return render_to_response('home.html', locals(), context_instance=RequestContext(request))
