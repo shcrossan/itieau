@@ -10,8 +10,7 @@ from django.template import RequestContext
 import requests
 
 #Lib
-import base64
-from mechanize import Browser
+
 
 
 @login_required
