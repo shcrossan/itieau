@@ -21,7 +21,7 @@ def home(request):
     # url = 'http://tiapiriuf.dyndns.info/BDY_Data.htm?p0=101&p1=100&p2=7&p3=8&p4=45&p5=48&p6=9&p7=10&p8=94&p9=41&p10=46&p11=49&p12=25&p13=160&p14=63&p15=66&p16=28&p17=42'
     # browser = Browser()
     # browser.addheaders.append(('Authorization', 'Basic %s' % base64.encodestring('%s:%s' % (user, pwd))))
-    headers = {'content-length':'160'}
+    headers = {'Content-Length': '160'}
     r = requests.get("http://107.170.192.206/test.php", headers=headers)
     status_code = r.status_code
     header = r.headers
