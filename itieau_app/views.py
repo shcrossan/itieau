@@ -21,10 +21,10 @@ def home(request):
     # browser = Browser()
     # browser.addheaders.append(('Authorization', 'Basic %s' % base64.encodestring('%s:%s' % (user, pwd))))
     # r = requests.get("http://www.itievolution-staging.com/itieau/itieau.php", headers=headers, allow_redirects=False)
-    r = requests.get("http://107.170.192.206/test.php")
-    text = r.text.encode('ASCII', 'ignore')
-    str_text = str(text)
-    split_text = str.split(text, 'Bornier local')
-    value = split_text[0][-5:]
+    # r = requests.get("http://107.170.192.206/test.php")
+    # text = r.text.encode('ASCII', 'ignore')
+    # str_text = str(text)
+    # split_text = str.split(text, 'Bornier local')
+    # value = split_text[0][-5:]
 
     return render_to_response('home.html', locals(), context_instance=RequestContext(request))
