@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-4">
             <p>{{ value }}</p>
-            <div id="gauge" height="200px" width="90%"></div>
+            <div id="gauge" class="200x160px"></div>
         </div>
         <div class="col-md-4">
             <p>{{ value2 }}</p>
@@ -16,13 +16,13 @@
     </div>
 
     <script>
-        var g = new JustGage({
-            id: "gauge",
-            value: {{ value }},
-            min: 0,
-            max: 10,
-            title: "Pump 1"
-        });
-    </script>
+    var g = new JustGage({
+    id: "gauge",
+    value: 67,
+    min: 0,
+    max: 100,
+    title: "Visitors"
+  });
+</script>
 
 {% endblock %}
