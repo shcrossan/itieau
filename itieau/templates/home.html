@@ -3,15 +3,15 @@
     <div class="row">
         <div class="col-md-4">
             <p>{{ value }}</p>
-            <div id="gauge" style="width:400px; height:320px;"></div>
+            <div id="gauge1" style="width:400px; height:320px;"></div>
         </div>
         <div class="col-md-4">
             <p>{{ value2 }}</p>
-            <canvas id="guage2"></canvas>
+            <div id="gauge2" style="width:400px; height:320px;"></div>
         </div>
         <div class="col-md-4">
             <p>{{ value3 }}</p>
-            <canvas id="guage3"></canvas>
+           <div id="gauge3" style="width:400px; height:320px;"></div>
         </div>
     </div>
     <script>
@@ -21,6 +21,20 @@
             min: 0,
             max: 10,
             title: "Tiapiri"
+        });
+        var g2 = new JustGage({
+            id: "gauge2",
+            value: {{ value_round2 }},
+            min: 0,
+            max: 10,
+            title: "Socredo"
+        });
+        var g3 = new JustGage({
+            id: "gauge3",
+            value: {{ value_round2 }},
+            min: 0,
+            max: 10,
+            title: "Schmidt"
         });
     </script>
 {% endblock %}
