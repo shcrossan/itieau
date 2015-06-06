@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-4">
             <p>{{ value }}</p>
-            <canvas id="guage1"></canvas>
+            <div id="gauge" height="200px" width="90%"></div>
         </div>
         <div class="col-md-4">
             <p>{{ value2 }}</p>
@@ -16,38 +16,13 @@
     </div>
 
     <script>
-        var opts = {
-            lines: 12, // The number of lines to draw
-            angle: 0.15, // The length of each line
-            lineWidth: 0.44, // The line thickness
-            pointer: {
-                length: 0.9, // The radius of the inner circle
-                strokeWidth: 0.035, // The rotation offset
-                color: '#000000' // Fill color
-            },
-            limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
-            colorStart: '#6FADCF',   // Colors
-            colorStop: '#8FC0DA',    // just experiment with them
-            strokeColor: '#E0E0E0',   // to see which ones work best for you
-            generateGradient: true
-        };
-        var target1 = document.getElementById('guage1'); // your canvas element
-        var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
-        gauge1.maxValue = 100; // set max gauge value
-        gauge1.animationSpeed = 1; // set animation speed (32 is default value)
-        gauge1.set({{ value }}); // set actual value
-
-{#        var target2 = document.getElementById('guage2'); // your canvas element#}
-{#        var gauge2 = new Gauge(target2).setOptions(opts); // create sexy gauge!#}
-{#        gauge2.maxValue = 100; // set max gauge value#}
-{#        gauge2.animationSpeed = 1; // set animation speed (32 is default value)#}
-{#        gauge2.set({{ value2 }}); // set actual value#}
-{##}
-{#        var target3 = document.getElementById('guage3'); // your canvas element#}
-{#        var gauge3 = new Gauge(target3).setOptions(opts); // create sexy gauge!#}
-{#        gauge3.maxValue = 100; // set max gauge value#}
-{#        gauge3.animationSpeed = 1; // set animation speed (32 is default value)#}
-{#        gauge3.set({{ value3 }}); // set actual value#}
+        var g = new JustGage({
+            id: "gauge",
+            value: {{ value }},
+            min: 0,
+            max: 10,
+            title: "Pump 1"
+        });
     </script>
 
 {% endblock %}
