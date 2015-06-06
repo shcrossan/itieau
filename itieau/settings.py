@@ -90,7 +90,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/itieau/static/'
 
 STATICFILES_DIRS = (
-
+    '/home/ubuntu/itieau/itieau_app/static',
 )
 
 TEMPLATE_DIRS =(
