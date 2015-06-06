@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col-md-4">
             <p>{{ value }}</p>
-            <div id="gauge" style="width:400px; height:320px;"></div>
+            <canvas id="guage1"></canvas>
+{#            <div id="gauge" style="width:400px; height:320px;"></div>#}
         </div>
         <div class="col-md-4">
             <p>{{ value2 }}</p>
@@ -15,12 +16,25 @@
         </div>
     </div>
     <script>
-        var g = new JustGage({
-            id: "gauge",
-            value: 5,
-            min: 0,
-            max: 10,
-            title: "Tiapiri"
-  });
+        var opts = {
+            lines: 12, // The number of lines to draw
+            angle: 0.15, // The length of each line
+            lineWidth: 0.44, // The line thickness
+            pointer: {
+                length: 0.9, // The radius of the inner circle
+                strokeWidth: 0.035, // The rotation offset
+                color: '#000000' // Fill color
+            },
+            limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+            colorStart: '#6FADCF',   // Colors
+            colorStop: '#8FC0DA',    // just experiment with them
+            strokeColor: '#E0E0E0',   // to see which ones work best for you
+            generateGradient: true
+        };
+        var target1 = document.getElementById('guage1'); // your canvas element
+        var gauge1 = new Gauge(target1).setOptions(opts); // create sexy gauge!
+        gauge1.maxValue = 3000; // set max gauge value
+        gauge1.animationSpeed = 1; // set animation speed (32 is default value)
+        gauge1.set(3000); // set actual value
 </script>
 {% endblock %}
