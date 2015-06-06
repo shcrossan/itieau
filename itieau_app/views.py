@@ -19,6 +19,7 @@ def home(request):
     text = r.text.encode('ASCII', 'ignore')
     split_text = str.split(text, 'Bornier local')
     value = split_text[0][-5:]
+    value_round = value.round()
 
     r2 = requests.get("http://107.170.192.206/socredo.php")
     text2 = r2.text.encode('ASCII', 'ignore')
