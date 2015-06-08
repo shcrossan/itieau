@@ -11,10 +11,15 @@ import requests
 
 #Lib
 
-
+@login_required()
+def home(request):
+    url = '/' + request.user.username + '/'
+    return HttpResponseRedirect(url)
 
 @login_required
-def home(request):
+def faaa(request):
+    if request.user.username != 'faaa':
+        return HttpResponseRedirect('/')
     r = requests.get("http://107.170.192.206/tiapiriuf.php")
     text = r.text.encode('ASCII', 'ignore')
     split_text = str.split(text, 'Bornier local')
