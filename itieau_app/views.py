@@ -41,4 +41,4 @@ def faaa(request):
     value_str3 = str.strip(value3, '\x1e')
     value_round3 = round(float(value_str3))
 
-    return render_to_response('home.html', locals(), context_instance=RequestContext(request))
+    return render_to_response('marie/faaa.html', locals(), context_instance=RequestContext(request))

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div id="gauge1" style="width:400px; height:320px;"></div>
+            <p>Actual Value: {{ value }}</p>
+        </div>
+        <div class="col-md-4">
+            <div id="gauge2" style="width:400px; height:320px;"></div>
+            <p>Actual Value: {{ value2 }}</p>
+        </div>
+        <div class="col-md-4">
+           <div id="gauge3" style="width:400px; height:320px;"></div>
+            <p>Actual Value: {{ value3 }}</p>
+        </div>
+    </div>
+    <script>
+        var g1 = new JustGage({
+            id: "gauge1",
+            value: {{ value_round }},
+            min: 0,
+            max: 10,
+            title: "Tiapiri",
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+        });
+        var g2 = new JustGage({
+            id: "gauge2",
+            value: {{ value_round2 }},
+            min: 0,
+            max: 10,
+            title: "Socredo",
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+        });
+        var g3 = new JustGage({
+            id: "gauge3",
+            value: {{ value_round2 }},
+            min: 0,
+            max: 10,
+            title: "Schmidt",
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+        });
+    </script>
+{% endblock %}
