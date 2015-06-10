@@ -74,3 +74,18 @@ def faaa(request):
     value_round3 = round(float(value_str3))
 
     return render_to_response('marie/faaa.html', locals(), context_instance=RequestContext(request))
+
+
+def demo(request):
+    if request.user.username != 'demo':
+        return HttpResponseRedirect('/')
+    value = 0.90
+    value_round = round(value)
+
+    value2 = 2.93
+    value_round2 = round(value2)
+
+    value3 = 5.12
+    value_round3 = round(value3)
+
+    return render_to_response('marie/demo.html', locals(), context_instance=RequestContext(request))
