@@ -1,10 +1,10 @@
 .waterguage {
-  border: solid;
-  border-color: white;
-  border-width: 2px;
-  width: 405px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
-  -moz-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
-  box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
+  border: solid !important;
+  border-color: white !important;
+  border-width: 2px !important;;
+  width: 405px !important;
+  border-radius: 8px !important;
+  -webkit-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1) !important;
+  -moz-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1) !important;
+  box-shadow: 0px 3px 19px -1px rgba(102,102,102,1) !important;
 }
