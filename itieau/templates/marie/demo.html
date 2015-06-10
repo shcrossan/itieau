@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-md-4 panel panel-primary" >
-            <div id="gauge1" style="width:400px; height:320px;"></div>
-            <p>Actual Value: {{ value }}</p>
+        <div class="col-md-4" >
+            <div class="waterguage">
+                <div id="gauge1" style="width:400px; height:320px;"></div>
+                <p align="center" style="color: #C8C8C8;">Actual Value: {{ value }}</p>
+            </div>
         </div>
-        <div class="col-md-4 panel panel-primary">
-            <div id="gauge2" style="width:400px; height:320px;"></div>
-            <p>Actual Value: {{ value2 }}</p>
+        <div class="col-md-4">
+            <div class="waterguage">
+                <div id="gauge2" style="width:400px; height:320px;"></div>
+                <p align="center" style="color: #C8C8C8;">Actual Value: {{ value2 }}</p>
+            </div>
         </div>
-        <div class="col-md-4 panel panel-primary">
-           <div id="gauge3" style="width:400px; height:320px;"></div>
-            <p>Actual Value: {{ value3 }}</p>
+        <div class="col-md-4">
+            <div class="waterguage">
+               <div id="gauge3" style="width:400px; height:320px;"></div>
+                <p align="center" style="color: #C8C8C8;">Actual Value: {{ value3 }}</p>
+            </div>
         </div>
     </div>
     <script>

@@ -1,0 +1,10 @@
+.waterguage {
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  width: 405px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
+  -moz-box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
+  box-shadow: 0px 3px 19px -1px rgba(102,102,102,1);
+}
