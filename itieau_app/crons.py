@@ -2,7 +2,7 @@ __author__ = 'shanecrossan'
 
 from django_cron import CronJobBase, Schedule
 from functions import *
-from models import contact
+from itieau_app.models import contact
 import requests
 
 class MyCronJob(CronJobBase):
@@ -25,7 +25,7 @@ class MyCronJob(CronJobBase):
         message = 'Water level at Tiapiri is less then 1m **test if loop User__**!'
 
         if value_float > 1:
-            contact_obj = contact.object.filter(user__username='faaa')
+            contact_obj = contact.objects.filter(user__username = 'faaa')
             for c_ob in contact_obj:
                 number = c_ob.number
                 gateway.sendMessageToNumber(number, message, '8659')
