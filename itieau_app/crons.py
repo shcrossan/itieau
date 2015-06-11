@@ -22,10 +22,10 @@ class MyCronJob(CronJobBase):
         value = split_text[0][-5:]
         value_str = str.strip(value, '\x1e')
         value_float = float(value_str)
-        message = 'Water level at Tiapiri is less then 1m **test**!'
-        gateway.sendMessageToNumber('87246572', message, '8659')
+        message = 'Water level at Tiapiri is less then 1m **test if**!'
 
-        # if value_float > 1:
+        if value_float > 1:
+            gateway.sendMessageToNumber('87246572', message, '8659')
         #     contact_obj = contact.object.filter(user='faaa')
         #     for c_ob in contact_obj:
         #         number = c_ob.number
