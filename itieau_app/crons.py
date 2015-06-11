@@ -6,7 +6,7 @@ from models import contact
 import requests
 
 class MyCronJob(CronJobBase):
-    RUN_EVERY_MINS = 30 # every 30 mins
+    RUN_EVERY_MINS = 2 # every 30 mins
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'itieau_app.cons'    # a unique code
@@ -22,9 +22,9 @@ class MyCronJob(CronJobBase):
         value = split_text[0][-5:]
         value_str = str.strip(value, '\x1e')
         value_float = float(value_str)
-        message = 'Water level at Tiapiri is less then 1m!'
+        message = 'Water level at Tiapiri is less then 1m **test**!'
 
-        if value_float < 1:
+        if value_float > 1:
             contact_obj = contact.object.filter(user='faaa')
             for c_ob in contact_obj:
                 number = c_ob.number
