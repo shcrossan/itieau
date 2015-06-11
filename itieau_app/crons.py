@@ -24,7 +24,7 @@ class MyCronJob(CronJobBase):
         value_float = float(value_str)
         message = 'Water level at Tiapiri is less then 1m **test if loop User__**!'
 
-        if value_float > 1:
+        if value_float < 1:
             contact_obj = contact.objects.filter(user__username = 'faaa')
             for c_ob in contact_obj:
                 number = c_ob.number
