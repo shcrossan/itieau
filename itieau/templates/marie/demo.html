@@ -3,19 +3,19 @@
     <div class="row">
         <div class="col-md-4" >
             <div class="waterguage">
-                <div id="gauge1" style="width:400px; height:320px;"></div>
+                <div id="gauge1"></div>
                 <p align="center" style="color: #C8C8C8;">Actual Value: {{ value }}</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="waterguage">
-                <div id="gauge2" style="width:400px; height:320px;"></div>
+                <div id="gauge2"></div>
                 <p align="center" style="color: #C8C8C8;">Actual Value: {{ value2 }}</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="waterguage">
-               <div id="gauge3" style="width:400px; height:320px;"></div>
+               <div id="gauge3"></div>
                 <p align="center" style="color: #C8C8C8;">Actual Value: {{ value3 }}</p>
             </div>
         </div>
@@ -27,7 +27,8 @@
             min: 0,
             max: 10,
             title: "Demo Level 1",
-            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ],
+            relativeGaugeSize: true
         });
         var g2 = new JustGage({
             id: "gauge2",
@@ -35,7 +36,8 @@
             min: 0,
             max: 10,
             title: "Demo Level 2",
-            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ],
+            relativeGaugeSize: true
         });
         var g3 = new JustGage({
             id: "gauge3",
@@ -43,7 +45,8 @@
             min: 0,
             max: 10,
             title: "Demo Level 3",
-            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ]
+            levelColors : [  "#85BFF2", "#4BA4F2",  "#4992F2" ],
+            relativeGaugeSize: true
         });
     </script>
 {% endblock %}
