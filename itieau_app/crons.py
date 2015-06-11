@@ -6,7 +6,7 @@ from itieau_app.models import contact
 import requests
 
 class MyCronJob(CronJobBase):
-    RUN_EVERY_MINS = 2 # every 30 mins
+    RUN_EVERY_MINS = 30 # every 30 mins
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'itieau_app.cons'    # a unique code
