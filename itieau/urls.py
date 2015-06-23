@@ -11,6 +11,4 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     #URL's for each Maire
-    url(r'^faaa/$', 'itieau_app.views.faaa', name='faaa'),
-    url(r'^demo/$', 'itieau_app.views.demo', name='demo'),
 )
