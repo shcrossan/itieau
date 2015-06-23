@@ -2,7 +2,7 @@ __author__ = 'shanecrossan'
 
 from django_cron import CronJobBase, Schedule
 from functions import *
-from itieau_app.models import contact
+from itieau_app.models import contact, Url
 import requests
 
 class MyCronJob(CronJobBase):
@@ -15,17 +15,17 @@ class MyCronJob(CronJobBase):
         gateway = SmsGateway()
         gateway.loginDetails('shanecrossan@gmail.com', 'r33b00ts')
 
-
-        r = requests.get("http://107.170.192.206/tiapiriuf.php")
-        text = r.text.encode('ASCII', 'ignore')
-        split_text = str.split(text, 'Bornier local')
-        value = split_text[0][-5:]
-        value_str = str.strip(value, '\x1e')
-        value_float = float(value_str)
-        message = 'Water level at Tiapiri is less then 1m **test if loop User__**!'
-
-        if value_float < 1:
-            contact_obj = contact.objects.filter(user__username = 'faaa')
-            for c_ob in contact_obj:
-                number = c_ob.number
-                gateway.sendMessageToNumber(number, message, '8659')
+        url = Url.objects.filter(user__username = 'faaa')
+        for url_obj in url:
+            r = requests.get("http://107.170.192.206/" + url_obj.script)
+            text = r.text.encode('ASCII', 'ignore')
+            split_text = str.split(text, 'Bornier')
+            value = split_text[url_obj.bornierSpilt][-5:]
+            value_str = str.strip(value, '\x1e')
+            value_float = float(value_str)
+            message = 'Water level at ' + url_obj.name +' is less then 1m!'
+            if value_float < 1:
+                contact_obj = contact.objects.filter(user__username = 'faaa')
+                for c_ob in contact_obj:
+                    number = c_ob.number
+                    gateway.sendMessageToNumber(number, message, '8659')
